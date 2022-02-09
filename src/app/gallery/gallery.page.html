@@ -1,63 +1,58 @@
-<ion-header>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>Digital Products</ion-title>
+<!-- home.page.html -->
+<ion-header [translucent]="true">
+  <ion-toolbar color="warning">
+    <ion-title>
+      Digital Products
+    </ion-title>
   </ion-toolbar>
 </ion-header>
+<!---Body Content-->
+<ion-content [fullscreen]="true" class="ion-padding">
 
-<ion-content>
-  <ion-card>
-    <ion-card-header style="font:bolder;">Imac</ion-card-header>
-    <img class="img" src="..\assets\img\Imac.jpg"/>
-    <ion-card-content>
-      Specifications
-      <br>
-      Ram: 16 GB
-      Storage: 1 TB
-      <br>
-      Operating System: Windows 11
-      <br>
-     <ion-Bold> Price: N$ 3000</ion-Bold>
-    </ion-card-content>
-    
-  </ion-card>
 
-  <ion-card>
-    <ion-card-header style="font:bolder;">Hp Gaming Laptop</ion-card-header>
-    <img class="img" src="..\assets\img\HP_Gaming.jpg" />
-    <ion-card-content>
-      Description:
-      
-      <br>
-      Specifications
-      <br>
-      Ram: 16 GB
-      Storage: 2 TB
-      <br>
-      Operating System: Windows 11
-      <br>      
-     <ion-Bold> Price: N$ 2000</ion-Bold>
-    </ion-card-content>
-  </ion-card>
+<!---Haader--->
+  <h5>Welcome To The Digital World</h5>
 
-  <ion-card>
-    <ion-card-header style="font:bolder;">Lenovo</ion-card-header>
-    <img class="img" src="..\assets\img\Lenovo.jpg"/>
-    <ion-card-content>
-      Specifications
-      <br>
-      Ram: 8 GB
-      Storage: 2 TB
-      <br>
-      Operating System: Windows 10
-      <br>
-     <ion-Bold> Price: N$ 1500</ion-Bold>
-    </ion-card-content>
-    
-  </ion-card>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+
+        <!----Slider-->
+        <ion-slides pager="true" [options]="slideOptsOne" #slideWithNav
+          (ionSlideDidChange)="SlideDidChange(sliderOne,slideWithNav)">
+          <ion-slide *ngFor="let s of sliderOne.slidesItems">
+            <img src="..\assets\img\Lenovo.jpg">
+            <span class="slide-text">Lenovo {{s.id}}</span>
+          </ion-slide>
+           
+          <ion-slide *ngFor="let s of sliderOne.slidesItems">
+            <img src="..\assets\img\Imac.jpg">
+            <span class="slide-text">Imac {{s.id}}</span>
+          </ion-slide>
+          
+          <ion-slide *ngFor="let s of sliderOne.slidesItems">
+            <img src="..\assets\img\HP_Gaming.jpg">
+            <span class="slide-text">HP {{s.id}}</span>
+          </ion-slide>
+
+          <ion-slide *ngFor="let s of sliderOne.slidesItems">
+            <img src="..\assets\img\Front1.jpg">
+            <span class="slide-text">HP {{s.id}}</span>
+          </ion-slide>
+
+          <ion-slide *ngFor="let s of sliderOne.slidesItems">
+            <img src="..\assets\img\Front2.png">
+            <span class="slide-text">HP {{s.id}}</span>
+          </ion-slide>
+
+        </ion-slides>
+        <!---End of slides-->
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+
+
+  
+
 </ion-content>
-
-
